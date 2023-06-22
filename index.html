@@ -1,36 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap"
+    rel="stylesheet">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Product preview card component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "dark-cyan": "hsl(158, 36%, 37%)",
+            cream: "hsl(30, 38%, 92%)",
+            "very-dark": "hsl(212, 21%, 14%)",
+            "dark-grayish": "hsl(228, 12%, 48%)",
+            white: "hsl(0, 0%, 100%)",
+          },
+          fontFamily: {
+            sans: "Montserrat",
+            title: "Fraunces"
+          },
+          fontSize: {
+            base: "14px"
+          },
+          screens: {
+            desktop: "1440px"
+          }
+        }
+      }
+    }
+  </script>
+
 </head>
-<body>
 
-  Preview
+<body
+  class="desktop:flex desktop:items-center desktop:justify-center desktop:text-lg w-screen h-screen bg-cream px-4 py-8 text-base ">
+  <main
+    class="desktop:rounded-xl desktop:shadow-lg desktop:h-[70%] desktop:w-[60%] desktop:pb-0 desktop:flex-row flex flex-col rounded-lg bg-white overflow-hidden gap-6 pb-6 ">
+    <img class="block desktop:hidden" src="./images/image-product-mobile.jpg" alt="mobile">
+    <img class=" hidden desktop:block" src="./images/image-product-desktop.jpg" alt="desktop">
 
-  Gabrielle Essence Eau De Parfum
+    <div class="desktop:gap-8 desktop:h-full desktop:py-10 w-full px-6 flex flex-col gap-4 ">
+      <span class="uppercase text-dark-grayish tracking-[4px] ">perfume</span>
+      <h1 class="desktop:text-5xl text-very-dark text-left text-3xl font-title ">Gabrielle Essence Eau De Parfum</h1>
+      <p class="desktop:text-xl text-dark-grayish ">A floral, solar and voluptuous interpretation composed by Olivier
+        Polge,
+        Perfumer-Creator for the House of CHANEL.</p>
 
-  A floral, solar and voluptuous interpretation composed by Olivier Polge, 
-  Perfumer-Creator for the House of CHANEL.
+      <div class="flex flex-row items-center gap-4 ">
+        <span class="desktop:text-5xl text-3xl text-dark-cyan font-title ">$149.99</span>
+        <span class="text-dark-grayish line-through ">$169.99</span>
+      </div>
 
-  $149.99
-  $169.99
+      <button class="bg-dark-cyan w-full py-4 rounded-lg text-white font-bold flex items-center justify-center gap-2 ">
+        <img src="./images/icon-cart.svg" alt="Cart">
+        Add to Cart</button>
 
-  Add to Cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    </div>
+  </main>
 </body>
+
 </html>
